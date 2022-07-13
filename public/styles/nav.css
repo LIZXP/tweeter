@@ -1,0 +1,30 @@
+nav {
+  display: flex;
+  flex-flow: row wrap;
+  height: 120px;
+  color: #ffffff;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  background-color: #4056a1;
+}
+.tweeter {
+  display: flex;
+  font-family: Bungee, sans-serif;
+  align-items: center;
+  font-size: 1.5em;
+}
+.arrow {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  align-items: center;
+  justify-content: center;
+  font-size: 70%;
+}
+.fa-angles-down {
+  color: red;
+}
+.fa-angles-down:hover {
+  display: flex;
+  padding-top: 5px;
+}
