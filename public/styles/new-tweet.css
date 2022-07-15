@@ -4,6 +4,7 @@
   width: 90%;
   background-color: #f4f1ec;
   font-family: sans-serif;
+  margin-bottom: 1.5em;
 }
 .new-tweet form {
   display: flex;
@@ -13,7 +14,7 @@ textarea {
   background-color: #f4f1ec;
   border: hidden;
   border-bottom: 3px solid rgb(165, 165, 166);
-  margin-bottom: 10px;
+  margin-bottom: 1.5rem;
 }
 
 #tweet-text {

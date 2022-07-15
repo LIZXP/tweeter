@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -58,7 +59,7 @@
         <i class="fa-solid fa-angles-down"></i>
       </div>
     </nav>
-    <header>
+    <header class="mainheader">
       <div>
         <img src="/images/profile-hex.png" />
       </div>
@@ -82,6 +83,34 @@
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
+      </section>
+      <!-- posted-tweets goes under -->
+      <section class="posted-tweets">
+        <article>
+          <header class="tweetheader">
+            <div>
+              <img id="image" src="./images/chat1.png" alt="chaticon" />
+              <label for="">Newton</label>
+            </div>
+            <h4>@Sirlsaac</h4>
+          </header>
+          <main>
+            <p class="posttext">
+              if i have seen further it is by standing on the shoulders of
+              giants
+            </p>
+          </main>
+          <footer>
+            <div class="foot-content">
+              <p>10 days ago</p>
+              <div id="foot-icons">
+                <i class="fa-solid fa-flag"></i>
+                <i class="fa-solid fa-repeat"></i>
+                <i class="fa-solid fa-heart"></i>
+              </div>
+            </div>
+          </footer>
+        </article>
       </section>
     </main>
   </body>
