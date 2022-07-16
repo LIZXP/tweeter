@@ -3,31 +3,6 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-//hard code data for testing
-const data = [
-  {
-    user: {
-      name: "Descartes",
-      avatars: "https://i.imgur.com/nlhLi3I.png",
-      handle: "@rd",
-    },
-    content: {
-      text: "Je pense , donc je suis",
-    },
-    created_at: 1461113959088,
-  },
-  {
-    user: {
-      name: "Newton",
-      avatars: "https://i.imgur.com/73hZDYK.png",
-      handle: "@SirIsaac",
-    },
-    content: {
-      text: "If I have seen further it is by standing on the shoulders of giants",
-    },
-    created_at: 1461116232227,
-  },
-];
 
 // function createTweetElement that takes in a tweet object and is responsible for returning a tweet <article> element containing the entire HTML structure of the tweet.
 
@@ -68,13 +43,11 @@ const renderTweets = function (data) {
     $(".posted-tweets").append(newTweetEles);
   }
 };
-$(document).ready(function () {
-  renderTweets(data);
-});
 
 // add an event listener that listens for the submit event
 // prevent the default behaviour of the submit event (data submission and page refresh)
 // create an AJAX POST request in client.js that sends the form data to the server.
+//invoke the loadtweets function when document ready
 
 $(document).ready(function () {
   $(".new-tweet form").submit(function (event) {
@@ -82,4 +55,22 @@ $(document).ready(function () {
     let dataString = $(this).serialize();
     $.ajax({ type: "POST", url: "/tweets/", data: dataString });
   });
+  loadtweets();
 });
+
+//feching the data with ajax get request
+//passing the renderTweets function into success callback
+
+const loadtweets = function () {
+  $.ajax({
+    type: "GET",
+    url: "/tweets/",
+    dataType: "json",
+    success: (data) => {
+      renderTweets(data);
+    },
+    error: (error) => {
+      console.log(error);
+    },
+  });
+};
