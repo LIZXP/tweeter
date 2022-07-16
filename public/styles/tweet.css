@@ -26,8 +26,8 @@ article {
   align-items: baseline;
   justify-content: space-between;
 }
-.tweetheader h4 {
-  opacity: 50%;
+.tweetheader p {
+  color: rgb(166, 175, 175);
 }
 .posttext {
   border-bottom: 3px solid rgb(165, 165, 166);

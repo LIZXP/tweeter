@@ -39,7 +39,7 @@ const createTweetElement = function (indx) {
         <img id="image" src="./images/chat1.png" alt="chaticon" />
         <label>${indx.user.name}</label>
       </div>
-      <h4>${indx.user.handle}</h4>
+      <p><b>${indx.user.handle}</b></p>
     </header>
     <main>
       <p class="posttext">
@@ -70,4 +70,16 @@ const renderTweets = function (data) {
 };
 $(document).ready(function () {
   renderTweets(data);
+});
+
+// add an event listener that listens for the submit event
+// prevent the default behaviour of the submit event (data submission and page refresh)
+// create an AJAX POST request in client.js that sends the form data to the server.
+
+$(document).ready(function () {
+  $(".new-tweet form").submit(function (event) {
+    event.preventDefault();
+    let dataString = $(this).serialize();
+    $.ajax({ type: "POST", url: "/tweets/", data: dataString });
+  });
 });
