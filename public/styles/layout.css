@@ -33,11 +33,3 @@ body {
   background-color: #f4f1ec;
   justify-content: end;
 }
-.posted-tweets {
-  display: flex;
-  flex-flow: row wrap;
-  width: 90%;
-  background-color: #f4f1ec;
-  justify-content: left;
-  margin-top: 1rem;
-}

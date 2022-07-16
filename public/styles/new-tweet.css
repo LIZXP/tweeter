@@ -31,7 +31,7 @@ textarea {
   font-family: "Bungee", sans-serif;
 }
 .new-tweet button {
-  background-color: #4056a1;
+  background-color: #e8a87c;
   color: white;
   border-style: groove;
   font-family: "Bungee", sans-serif;
@@ -41,5 +41,5 @@ textarea {
 
 .new-tweet button:hover {
   background-color: rgb(251, 254, 255);
-  color: #4056a1;
+  color: #e8a87c;
 }
