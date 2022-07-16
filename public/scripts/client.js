@@ -23,7 +23,7 @@ const createTweetElement = function (indx) {
     </main>
     <footer>
       <div class="foot-content">
-        <p>${indx.created_at}</p>
+        <p>Posted ${timeago.format(indx.created_at)}</p>
         <div id="foot-icons">
           <i class="fa-solid fa-flag"></i>
           <i class="fa-solid fa-repeat"></i>
