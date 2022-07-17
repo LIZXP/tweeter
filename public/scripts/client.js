@@ -18,7 +18,7 @@ const createTweetElement = function (indx) {
     </header>
     <main>
       <p class="posttext">
-      ${indx.content.text}
+      ${escapex(indx.content.text)}
       </p>
     </main>
     <footer>
@@ -40,7 +40,7 @@ const createTweetElement = function (indx) {
 const renderTweets = function (data) {
   for (let indx of data) {
     const newTweetEles = createTweetElement(indx);
-    $(".posted-tweets").append(newTweetEles);
+    $(".posted-tweets").prepend(newTweetEles);
   }
 };
 
@@ -52,8 +52,19 @@ const renderTweets = function (data) {
 $(document).ready(function () {
   $(".new-tweet form").submit(function (event) {
     event.preventDefault();
-    let dataString = $(this).serialize();
-    $.ajax({ type: "POST", url: "/tweets/", data: dataString });
+    let text = $(".new-tweet textarea").val();
+    let textLength = text.length;
+    if (textLength === 0) {
+      alert("Please enter something.");
+    }
+    if (textLength > 140) {
+      alert("characters are exceeded Max length of 140.");
+    } else if (textLength <= 140 && textLength > 0) {
+      $.post("/tweets/", $(".new-tweet form").serialize()).then(() => {
+        $(".posted-tweets").empty();
+        loadtweets();
+      });
+    }
   });
   loadtweets();
 });
@@ -67,10 +78,22 @@ const loadtweets = function () {
     url: "/tweets/",
     dataType: "json",
     success: (data) => {
+      $(".new_tweet").empty();
       renderTweets(data);
     },
     error: (error) => {
       console.log(error);
     },
   });
+};
+
+//Preventing XSS with Escaping
+//create new element Div
+//create the user input as string and appendChild to the div
+//return the text to show it on the string literal.
+
+const escapex = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
 };
