@@ -55,10 +55,16 @@ $(document).ready(function () {
     let text = $(".new-tweet textarea").val();
     let textLength = text.length;
     if (textLength === 0) {
-      alert("Please enter something.");
+      $("#notext").slideDown();
+      setTimeout(() => {
+        $("#notext").slideUp();
+      }, 2500);
     }
     if (textLength > 140) {
-      alert("characters are exceeded Max length of 140.");
+      $("#toomany").slideDown();
+      setTimeout(() => {
+        $("#toomany").slideUp();
+      }, 2500);
     } else if (textLength <= 140 && textLength > 0) {
       $.post("/tweets/", $(".new-tweet form").serialize()).then(() => {
         $(".posted-tweets").empty();

@@ -43,3 +43,19 @@ textarea {
   background-color: rgb(251, 254, 255);
   color: #e8a87c;
 }
+
+#notext {
+  border: 3px solid red;
+  color: red;
+  background-color: f4f1ec;
+  display: none;
+  text-align: center;
+}
+
+#toomany {
+  border: 3px solid red;
+  color: red;
+  background-color: f4f1ec;
+  display: none;
+  text-align: center;
+}
