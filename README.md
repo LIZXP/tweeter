@@ -5,7 +5,7 @@ Tweeter is a single-page Twitter clone, where users can create short posts of up
 ## Page Demos
 
 !["Desktop View"](typing.PNG)
-!["Desktop View"](desktopversion.PNG)
+!["Desktop View"](https://github.com/LIZXP/tweeter/blob/master/docs/desktopversion.PNG)
 !["Mobile Device View"](mobileversion.PNG)
 
 ## Getting Started
