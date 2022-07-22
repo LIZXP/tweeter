@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
@@ -65,39 +69,47 @@
         <i class="fa-solid fa-angles-down"></i>
       </div>
     </nav>
-    <header class="mainheader">
-      <div>
-        <img src="/images/profile-hex1.png" alt="avatar picture" />
-      </div>
-      <div>
-        <h2>Peter Li</h2>
-      </div>
-    </header>
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <div id="notext">
-          <p>⛔Please enter something⛔</p>
+    <div id="header-main-wrapper">
+      <header class="mainheader">
+        <div>
+          <img
+            src="/images/profile-hex1.png"
+            alt="avatar picture"
+            class="image"
+          />
         </div>
-        <div id="toomany">
-          <p>Characters are exceeded Max length of 140⛔</p>
+        <div class="username">
+          <h2>Peter Li</h2>
         </div>
-        <h2>Compose Tweet</h2>
-        <form action="/tweets/" method="POST">
-          <label for="tweet-text"></label>
-          <textarea
-            name="text"
-            id="tweet-text"
-            placeholder="What are you humming about?"
-          ></textarea>
-          <div>
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
+      </header>
+      <!-- Page-specific (main) content here -->
+      <main class="container">
+        <section class="new-tweet">
+          <div id="notext">
+            <p>⛔Please enter something⛔</p>
           </div>
-        </form>
-      </section>
-      <!-- posted-tweets goes under -->
-      <section class="posted-tweets"></section>
-    </main>
+          <div id="toomany">
+            <p>Characters are exceeded Max length of 140⛔</p>
+          </div>
+          <h2>Compose Tweet</h2>
+          <form action="/tweets/" method="POST">
+            <label for="tweet-text"></label>
+            <textarea
+              name="text"
+              id="tweet-text"
+              placeholder="What are you humming about?"
+            ></textarea>
+            <div>
+              <button type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text"
+                >140</output
+              >
+            </div>
+          </form>
+        </section>
+        <!-- posted-tweets goes under -->
+        <section class="posted-tweets"></section>
+      </main>
+    </div>
   </body>
 </html>
