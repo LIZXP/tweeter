@@ -12,6 +12,10 @@ article {
   margin-bottom: 2em;
 }
 
+article:hover {
+  box-shadow: 6px 6px #e8a87c;
+}
+
 #image {
   width: 51px;
   height: 51px;
@@ -32,6 +36,9 @@ article {
 .posttext {
   border-bottom: 3px solid rgb(165, 165, 166);
   padding-bottom: 1.5rem;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 .foot-content {

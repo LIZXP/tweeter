@@ -69,6 +69,7 @@ $(document).ready(function () {
       $.post("/tweets/", $(".new-tweet form").serialize()).then(() => {
         $(".posted-tweets").empty();
         loadtweets();
+        $("form").trigger("reset");
       });
     }
   });
